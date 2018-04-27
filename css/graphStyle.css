@@ -1,0 +1,27 @@
+/* tell the SVG path to be a thin blue line without any area fill */
+path {
+	/*stroke: red;*/
+	stroke-width: 4;             
+	stroke: url(#linear); 
+	fill: none;
+    /*stroke: url(#line-gradient);    */
+    /*stroke-width: 2px;          */
+}
+/*<rect x="10" y="10" width="600" height="200" stroke="url(#linear)" stroke-width="20" fill="#630"*/
+
+.axis {
+  shape-rendering: crispEdges;
+}
+.x.axis line {
+  stroke: lightgrey;
+}
+.x.axis .minor {
+  stroke-opacity: .5;
+}
+.x.axis path {
+  display: none;
+}
+.y.axis line, .y.axis path {
+  fill: none;
+  stroke: #000;
+}
