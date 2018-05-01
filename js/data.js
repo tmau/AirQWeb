@@ -1,6 +1,18 @@
 var apikey = "8250e91368af4527b937c436afe799a1";
 var adafruitUser = "/api/v2/tmau/";
 var ADAFRUIT = "https:/io.adafruit.com";
+var url = ADAFRUIT+adafruitUser+"feeds/data/data?X-AIO-Key="+apikey;
+
+// async function getProcessedData(url) {
+//   let v;
+//   try {
+//     v = await downloadData(url); 
+//   } catch(e) {
+//     v = await downloadFallbackData(url);
+//   }
+//   return processDataInWorker(v);
+// }
+// getProcessedData(url);
 
 $.getJSON(ADAFRUIT+adafruitUser+"feeds/data/data?X-AIO-Key="+apikey, function(data){
 	airQData = [1,2,3];

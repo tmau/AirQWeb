@@ -2,52 +2,52 @@
 <html lang="en" >
 
 <head>
-  	<meta charset="UTF-8">
-  	<title>Air Quality Monitor</title>
-  
-  	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-  	<link rel="stylesheet" href="css/style.css">
-  	<link rel="stylesheet" type="text/css" href="css/graphStyle.css">
- 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
- 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
- 	<script src="https://d3js.org/d3.v5.min.js"></script>
-  	<script type="text/javascript">
-		google.charts.load('current', {packages: ['corechart', 'line']});
-		google.charts.setOnLoadCallback(initialize);
-		function initialize() {
-			var opts = {sendMethod: 'auto'};
-			var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1oImXv6l04SwLrocQRCuhdC_829mlX5Uv2w6CmLl81-w/edit?usp=sharing', opts);
-			query.send(handleQueryResponse);
+	<meta charset="UTF-8">
+	<title>Air Quality Monitor</title>
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/graphStyle.css">
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://d3js.org/d3.v5.min.js"></script>
+	<!-- <script type="text/javascript">
+	google.charts.load('current', {packages: ['corechart', 'line']});
+	google.charts.setOnLoadCallback(initialize);
+	function initialize() {
+		var opts = {sendMethod: 'auto'};
+		var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1oImXv6l04SwLrocQRCuhdC_829mlX5Uv2w6CmLl81-w/edit?usp=sharing', opts);
+		query.send(handleQueryResponse);
+	}
+	function handleQueryResponse(response) {
+		if (response.isError()) {
+		alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+		return;
 		}
-		function handleQueryResponse(response) {
-			if (response.isError()) {
-			alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-			return;
-			}
-			var options = {
-		        hAxis: {
-		          title: 'Time (s)',
-		          logScale: false
-		        },
-		        vAxis: {
-		          title: 'Air Quality',
-		          logScale: false
-		        },
-		        title: 'Air Quality for an hour at ENGR 306 11.16.17 @ 3pm',
-		        colors: ['#a52714', '#097138']
-		    };
-		var data = response.getDataTable();
-			var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-			chart.draw(data, options);
-		}
-    </script>
-    <style>
-      #map {
-        height: 300px;
-        width: 80%;
-       }
-    </style>
-  
+		var options = {
+	        hAxis: {
+	          title: 'Time (s)',
+	          logScale: false
+	        },
+	        vAxis: {
+	          title: 'Air Quality',
+	          logScale: false
+	        },
+	        title: 'Air Quality for an hour at ENGR 306 11.16.17 @ 3pm',
+	        colors: ['#a52714', '#097138']
+	    };
+	var data = response.getDataTable();
+		var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+		chart.draw(data, options);
+	}
+</script> -->
+<style>
+  #map {
+    height: 300px;
+    width: 80%;
+   }
+</style>
+
 </head>
 
 <body>
@@ -64,95 +64,111 @@
 
   <div class="wrap">
 	<div class="container-fluid">
-		<div class="row">
-			<div class="col-sm-4">
-			</div>
-			<div class="col-sm-4">
-				<!-- <center><h1>H A L O</h1></center>
-	  			<center><h4>Safe guarding your lungs</h4></center> -->
-	  		</div>
-	  		<div class="col-sm-4">
-	  		</div>
-		</div>
-		<div class="row">
-			<!-- <div class="col-sm-6">
-				<center><div id="chart_div" style="width: 500px; height: 300px"></div></center>
-				<br>
-			</div>
-			<div class="col-sm-6">
-				<center><div id="map"></div></center>
-			    <script>
-			      function initMap() {
-			        var uluru = {lat: 37.354107, lng: -121.955238};
-			        var map = new google.maps.Map(document.getElementById('map'), {
-			          zoom: 12,
-			          center: uluru
-			        });
-			        var marker = new google.maps.Marker({
-			          position: uluru,
-			          map: map
-			        });
-			      }
-			    </script>
-			    <script async defer
-			    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6iNRTKzgmMjrR0Q9yJCxCKISUjLyS3Qo&callback=initMap">
-			    </script>
-			</div> -->
-		</div>
 		<br>
 		<div class="row">
-			<div class="col-sm-4">
-				<center><img src="icon/Hazzard.png" alt="HTML5 Icon" style="width:300px;height:280px;"></center>
-				<br>
-				<br>
-			</div>
-			<div class="col-sm-4">
-				<!-- <center><img src="icon/map.png" alt="HTML5 Icon" style="width:300px;height:300px;"></center>
-				<br>
-				<br> -->
-				<center><div id="map"></div></center>
-			    <script>
-			      function initMap() {
-			        var uluru = {lat: 37.354107, lng: -121.955238};
-			        var map = new google.maps.Map(document.getElementById('map'), {
-			          zoom: 12,
-			          center: uluru
-			        });
-			        var marker = new google.maps.Marker({
-			          position: uluru,
-			          map: map
-			        });
-			      }
-			    </script>
-			    <script async defer
-			    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6iNRTKzgmMjrR0Q9yJCxCKISUjLyS3Qo&callback=initMap">
-			    </script>
-			</div>
-			<div class="col-sm-4">
-				<center><img src="icon/graph.png" alt="HTML5 Icon" style="width:300px;height:250px;"></center>
-				<br>
-				<br>
-			</div>
-		</div>
-		</div>
-		<p id="img" class="img"></p>
-  </div>
-  	<div id="graph" class="aGraph" style="top:0px;left:0; float:left;"></div>
+			<center><div id="map"></div></center>
+		    <script>
+		        // This example displays a marker at the center of Australia.
+		        // When the user clicks the marker, an info window opens.
+		        var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+		        function initMap() {
+		        var bioE = {lat: 37.349049, lng: -121.938650};
+		        var mech = {lat: 37.348783, lng: -121.938225};
+		        var map = new google.maps.Map(document.getElementById('map'), {
+		          zoom: 17,
+		          center: bioE
+		        });
 
+		        var contentString = '<div id="content">'+
+		            '<div id="siteNotice">'+
+		            '</div>'+
+		            '<h1 id="firstHeading" class="firstHeading">Bioengineering Building</h1>'+
+		            '<div id="bodyContent">'+
+		            '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
+		            'sandstone rock formation in the southern part of the '+
+		            'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) '+
+		            'south west of the nearest large town, Alice Springs; 450&#160;km '+
+		            '(280&#160;mi) by road. Kata Tjuta and Uluru are the two major '+
+		            'features of the Uluru - Kata Tjuta National Park. Uluru is '+
+		            'sacred to the Pitjantjatjara and Yankunytjatjara, the '+
+		            'Aboriginal people of the area. It has many springs, waterholes, '+
+		            'rock caves and ancient paintings. Uluru is listed as a World '+
+		            'Heritage Site.</p>'+
+		            '</div>'+
+		            '</div>';
+		            
+		        var contentString2 = '<div id="content">'+
+		            '<div id="siteNotice">'+
+		            '</div>'+
+		            '<h1 id="firstHeading" class="firstHeading">Mechanical Engineering Building</h1>'+
+		            '<div id="bodyContent">'+
+		            '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
+		            'sandstone rock formation in the southern part of the '+
+		            'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) '+
+		            'south west of the nearest large town, Alice Springs; 450&#160;km '+
+		            '(280&#160;mi) by road. Kata Tjuta and Uluru are the two major '+
+		            'features of the Uluru - Kata Tjuta National Park. Uluru is '+
+		            'sacred to the Pitjantjatjara and Yankunytjatjara, the '+
+		            'Aboriginal people of the area. It has many springs, waterholes, '+
+		            'rock caves and ancient paintings. Uluru is listed as a World '+
+		            'Heritage Site.</p>'+
+		            '</div>'+
+		            '</div>';
+
+		        var infowindow = new google.maps.InfoWindow({
+		          content: contentString
+		        });
+
+		        var infowindow2 = new google.maps.InfoWindow({
+		          content: contentString2
+		        });
+
+		        var marker = new google.maps.Marker({
+		          position: bioE,
+		          map: map,
+		          icon: image,
+		          title: 'Uluru (Ayers Rock)'
+		        });
+		        var marker2 = new google.maps.Marker({
+		          position: mech,
+		          map: map,
+		          icon: image,
+		          title: 'Uluru (Ayers Rock)'
+		        });
+		        marker.addListener('click', function() {
+		          infowindow.open(map, marker);
+		          infowindow2.close();
+		        });
+		        marker2.addListener('click', function() {
+		          infowindow2.open(map, marker2);
+		          infowindow.close();
+		        });
+		      }
+		    </script>
+		    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6iNRTKzgmMjrR0Q9yJCxCKISUjLyS3Qo&callback=initMap">
+		    </script>
+		</div>
+		<div class="row">
+			<center>
+		  	<div id="graph" class="aGraph" style="top:0px;left:0; float:left;"></div>
+		  	</center>
+			<center>
+				<svg width="660" height="220">
+				  <defs>
+				    <linearGradient id="linear" x1="0%" y1="0%" x2="0%" y2="100%">
+				      <stop offset="0%"   stop-color="#ff0000"/>
+				      <stop offset="50%"   stop-color="#FFFF00"/>
+				      <stop offset="100%" stop-color="#0a5"/>
+				    </linearGradient>
+				  </defs>
+				</svg>
+			</center>
+			<script> var airQData; </script>
+			<script type="text/javascript" src="js/data.js"></script>
+			<script src="http://mbostock.github.com/d3/d3.v2.js"></script>
+			<script type="text/javascript" src="js/graph.js"></script>
+		</div>
+  	</div>
+  </div>
 </body>
-		<svg width="660" height="220">
-		  <defs>
-		    <linearGradient id="linear" x1="0%" y1="0%" x2="0%" y2="100%">
-		      <stop offset="0%"   stop-color="#ff0000"/>
-		      <stop offset="50%"   stop-color="#FFFF00"/>
-		      <stop offset="100%" stop-color="#0a5"/>
-		    </linearGradient>
-		  </defs>
-		  <!-- <rect x="10" y="10" width="600" height="200" fill="url(#linear)" /> -->
-		</svg>
-	<script> var airQData; </script>
-	<script type="text/javascript" src="js/data.js"></script>
-	<script src="http://mbostock.github.com/d3/d3.v2.js"></script>
-	<script type="text/javascript" src="js/graph.js"></script>
-	
 </html>

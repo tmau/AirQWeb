@@ -11,6 +11,13 @@ var h = 400 - m[0] - m[2]; // height
 var data = airQData;
 // X scale will fit all values from data[] within pixels 0-w
 console.log(data); //DO NOT REMOVE. THIS IS BECAUSE THE FILE IS ASYNCHRONOUS
+console.log(data); //DO NOT REMOVE. THIS IS BECAUSE THE FILE IS ASYNCHRONOUS
+console.log(data); //DO NOT REMOVE. THIS IS BECAUSE THE FILE IS ASYNCHRONOUS
+console.log(data); //DO NOT REMOVE. THIS IS BECAUSE THE FILE IS ASYNCHRONOUS
+console.log(data); //DO NOT REMOVE. THIS IS BECAUSE THE FILE IS ASYNCHRONOUS
+console.log(data); //DO NOT REMOVE. THIS IS BECAUSE THE FILE IS ASYNCHRONOUS
+console.log(data); //DO NOT REMOVE. THIS IS BECAUSE THE FILE IS ASYNCHRONOUS
+
 var x = d3.scale.linear().domain([0, data.length]).range([0, w]);
 // Y scale will fit values from 0-10 within pixels h-0 (Note the inverted domain for the y-scale: bigger is up!)
 var y = d3.scale.linear().domain([0, 100]).range([h, 0]);
